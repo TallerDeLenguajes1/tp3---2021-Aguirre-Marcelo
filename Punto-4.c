@@ -91,6 +91,8 @@ void mostrarCliente(Cliente * mostrarCliente, int cantidad){
 }
 
 void mostrar(Cliente * cargarCliente){
+    
+    float total = 0;
   
     printf("\n----------Cliente----------------\n");
     printf("ClienteID: %d\n", cargarCliente->ClienteID);
@@ -103,6 +105,8 @@ void mostrar(Cliente * cargarCliente){
         printf("Producto ID: %d\n",cargarCliente->Productos[i].ProductoID);
         printf("Cantidad: %d\n", cargarCliente->Productos[i].Cantidad);
         printf("cantidad:%s\n", cargarCliente->Productos[i].TipoProducto);
-        printf("Precio: %2.f\n", cargarCliente->Productos[i].PrecioUnitario);       
+        printf("Precio: %2.f\n", cargarCliente->Productos[i].PrecioUnitario); 
+        total = total + cargarCliente->Productos[i].PrecioUnitario;      
     } 
+    printf("total a pagar por los productos: %.2f", total);
 }
